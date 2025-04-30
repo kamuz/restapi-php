@@ -40,12 +40,12 @@ class Post {
 			';
 
 		// Prepare statement
-		$smtp  = $this->conn->prepare($query);
+		$stmt  = $this->conn->prepare($query);
 
 		// Execute query
-		$smtp->execute();
+		$stmt->execute();
 
-		return $smtp;
+		return $stmt;
 	}
 
 	// Get Single Post
@@ -70,15 +70,15 @@ class Post {
 			';
 
 		// Prepare statement
-		$smtp  = $this->conn->prepare($query);
+		$stmt  = $this->conn->prepare($query);
 
 		// Bind ID
-		$smtp->bindParam(1, $this->id);
+		$stmt->bindParam(1, $this->id);
 
 		// Execute query
-		$smtp->execute();
+		$stmt->execute();
 
-		$row = $smtp->fetch(PDO::FETCH_ASSOC);
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 		// Set properties
 		$this->title = $row['title'];
@@ -87,7 +87,7 @@ class Post {
 		$this->category_id = $row['category_id'];
 		$this->category_name = $row['category_name'];
 
-		return $smtp;
+		return $stmt;
 	}
 
 }
