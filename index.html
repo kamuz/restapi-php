@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>API Form Demo</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .box {
+      flex: 1;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .message {
+      border: 1px solid #ddd;
+      padding: 15px;
+      min-height: 100px;
+      background: #fefefe;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .cat {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #fafafa;
+      border-left: 4px solid #007BFF;
+    }
+
+    .cat strong {
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Column -->
+        <div class="box">
+            <h1>Data Finder</h1>
+            <p class="message">The message will go here</p>
+            <button id="getMessage">Get Message</button>
+        </div>
+        <!-- Right Column -->
+        <div class="box">
+            <h1>Data Sender</h1>
+            <form id="apiform">
+                <input type="text" name="title" placeholder="Title" autocomplete="on" />
+                <textarea name="body" cols="30" rows="5" placeholder="Body" autocomplete="on"></textarea>
+                <input type="text" name="author" placeholder="Author" autocomplete="on" />
+                <input type="number" name="category_id" placeholder="Category ID" autocomplete="on" />
+                <button id="postMessage">Post Message</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
