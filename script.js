@@ -1,5 +1,4 @@
-//POST REQUEST
-
+// POST Request
 $(document).ready(function() {
     $('#postMessage').click(function(e) {
         e.preventDefault(); // Prevent default form submission
@@ -28,8 +27,7 @@ $(document).ready(function() {
 });
 
 
-//GET REQUEST
-
+// GET Request
 $(document).ready(function() {
     $('#getMessage').on('click', function() {
 
@@ -51,9 +49,7 @@ $(document).ready(function() {
         });
     });
 
-    /**
-     * Converts an array of post objects into HTML markup.
-     */
+    // Converts an array of post objects into HTML markup.
     function generateHtml(dataArray) {
         return dataArray.map(item => {
             let rows = '';
